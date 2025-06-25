@@ -133,10 +133,10 @@ export default function TimelineSection() {
   };
 
   return (
-    <section id="services" className="px-6 min-h-screen flex items-center bg-gray-50 relative">
+    <section id="services" className="px-6 mb-4 sm:min-h-screen flex items-center bg-gray-50 relative">
       {/* Education Timeline Line */}
       <svg
-        className="absolute left-0 w-[90vw] h-8 transform -translate-y-1/2 z-0"
+        className="absolute left-0 w-[90vw] h-8 transform sm:-translate-y-1/2 -translate-y-12  z-0"
         style={{ top: "38%" }}
         viewBox="0 0 800 32"
         preserveAspectRatio="none"
@@ -152,7 +152,7 @@ export default function TimelineSection() {
 
       {/* Experience Timeline Line */}
       <svg
-        className="absolute left-0 w-[90vw] h-8 transform -translate-y-1/2 z-0"
+        className="absolute left-0 w-[90vw] h-8 transform sm:-translate-y-1/2 -translate-y-2  z-0"
         style={{ bottom: "17%" }}
         viewBox="0 0 800 32"
         preserveAspectRatio="none"
