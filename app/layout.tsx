@@ -3,8 +3,6 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Attique Sahito',
-  description: 'Created with v0',
-  generator: 'v0.dev',
 }
 
 export default function RootLayout({
@@ -14,6 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/titlelogo.ico" />
+      </head>
       <body>{children}</body>
     </html>
   )
