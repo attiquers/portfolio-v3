@@ -2,123 +2,51 @@
   "projects": [
     {
       "id": 1,
-      "title": "Finance Dashboard",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-      "description": "A comprehensive financial dashboard with real-time analytics and data visualization for tracking investments and expenses.",
-      "link": "https://google.com"
+      "title": "PokeClub: Gamified Pokémon-themed app",
+      "category": "Web Development",
+      "image": "/projects/pokedex.png",
+      "description": "Gamified Pokémon-themed app built in Next.js, Tailwind CSS, Supabase & Deepseek API. *Learned: OpenRouter API integration, Prompt Engineering, Supabase authentication, SQL Database Relationships, and gamification mechanics. *Features: AI powered pokemon battle, sign-up-in, quiz-based rewards, Pokémon sale and capture.",
+      "link": "https://pokedex-bluseel.vercel.app/"
     },
     {
       "id": 2,
-      "title": "Orizon Analytics",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      "description": "Advanced analytics platform with interactive charts and business intelligence tools for data-driven decision making.",
-      "link": "https://google.com"
+      "title": "Rouse Restaurant: Food ordering platform",
+      "category": "Web Development",
+      "image": "/projects/rouse.png",
+      "description": "Food ordering platform using the MERN stack. *Learned: Real-time order management, and admin-user flows. Agile workflow learned *Features: Ordering, Tracking Order, Admin Dashboard for handling orders and updating menu",
+      "link": "https://rouse-restuarant.vercel.app/"
     },
     {
       "id": 3,
-      "title": "Fundo Real Estate",
-      "category": "Web design",
-      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop",
-      "description": "Modern real estate website with property listings, virtual tours, and advanced search functionality.",
-      "link": "https://google.com"
+      "title": "Task Manager Pro",
+      "category": "Web Development",
+      "image": "/projects/task.png",
+      "description": "Academic productivity tool built with React and MongoDB. *Learned: state management, user feedback loop, and dashboard design. *Features: CR adds/removes courses and tasks. Other students can see them *Try with: Section FA22-BCS-D | Password: baseer",
+      "link": "https://tasktracker0.netlify.app/"
     },
     {
       "id": 4,
-      "title": "Brawlhalla Mobile",
-      "category": "Applications",
-      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
-      "description": "Mobile gaming application with multiplayer functionality, character customization, and tournament features.",
-      "link": "https://google.com"
+      "title": "E-Voting Website: Secure voting system",
+      "category": "Web Development",
+      "image": "/projects/evs.png",
+      "description": "Secure voting system with phase-based flow using the MERN stack. *Learned: Role-based access, OTP authentication, and conditional UI based on election status. *Features: Voter/Candidate/Party registration phase, Voters voting phase, Results phase *Try with: User Dashboard at /, Admin Dashboard at /admin.",
+      "link": "https://evs-electronicvotingsystem.vercel.app"
     },
     {
       "id": 5,
-      "title": "DSM Design System",
-      "category": "Web design",
-      "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop",
-      "description": "Comprehensive design system with reusable components, style guides, and brand consistency tools.",
-      "link": "https://google.com"
+      "title": "Stroke Prediction - ML model",
+      "category": "Machine Learning",
+      "image": "/projects/stroke.png",
+      "description": "ML model predicting stroke risk using Python and scikit-learn. *Learned: data preprocessing, binary classification, and medical dataset evaluation. *Features: Predicts stroke risk percetange based on user inputs.",
+      "link": "https://huggingface.co/spaces/attiquers/stroke-risk-predictor"
     },
     {
       "id": 6,
-      "title": "MetaSpark Performance",
-      "category": "Web design",
-      "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
-      "description": "Performance monitoring dashboard with real-time metrics, alerts, and optimization recommendations.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 7,
-      "title": "Summary Analytics",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=300&fit=crop",
-      "description": "Business intelligence platform with automated reporting, data visualization, and predictive analytics.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 8,
-      "title": "Task Manager Pro",
-      "category": "Applications",
-      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-      "description": "Productivity app with task management, team collaboration, time tracking, and project planning features.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 9,
-      "title": "Arrival Logistics",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
-      "description": "Logistics management system with shipment tracking, route optimization, and inventory management.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 10,
-      "title": "EcoShop E-commerce",
-      "category": "Web design",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      "description": "Sustainable e-commerce platform with eco-friendly products, carbon footprint tracking, and green shipping options.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 11,
-      "title": "FitTracker Mobile",
-      "category": "Applications",
-      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-      "description": "Fitness tracking app with workout plans, nutrition tracking, progress monitoring, and social features.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 12,
-      "title": "CloudSync Platform",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
-      "description": "Cloud storage and synchronization platform with file sharing, collaboration tools, and security features.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 13,
-      "title": "MindfulMed Healthcare",
-      "category": "Web design",
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
-      "description": "Healthcare platform with appointment booking, telemedicine, patient records, and health monitoring tools.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 14,
-      "title": "CryptoWallet App",
-      "category": "Applications",
-      "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=400&h=300&fit=crop",
-      "description": "Cryptocurrency wallet application with secure transactions, portfolio tracking, and market analysis features.",
-      "link": "https://google.com"
-    },
-    {
-      "id": 15,
-      "title": "EduLearn Platform",
-      "category": "Web development",
-      "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop",
-      "description": "Online learning platform with interactive courses, progress tracking, certificates, and student-teacher communication.",
-      "link": "https://google.com"
+      "title": "Real Estate Site",
+      "category": "Web Development",
+      "image": "/projects/saul.png",
+      "description": "Responsive frontend using React and Tailwind CSS, deployed on Vercel. *Learned: Reactjs, Responsive UI design, Vercel Deployement, and performance tuning. *Features: Responsive.",
+      "link": "https://sauljohnson.vercel.app/"
     }
   ]
 }

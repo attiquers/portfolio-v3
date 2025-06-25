@@ -66,15 +66,15 @@ export default function SkillsSection() {
                     <div className="flex flex-col items-center group">
                       <div className="w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-                          alt="PyTorch"
-                          className="w-10 h-10"
+                          src="/langchain.png"
+                          alt="LangChain"
+                          className=""
                         />
                       </div>
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>PyTorch</p>
+                    <p>LangChain</p>
                   </TooltipContent>
                 </Tooltip>
 

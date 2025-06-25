@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* Light theme colors (default) */
 :root {
   --background: 0 0% 100%; /* White */
@@ -98,4 +100,38 @@
   --sidebar-accent-foreground: 210 20% 98%;
   --sidebar-border: 217.2 32.6% 17.5%;
   --sidebar-ring: 212.7 26.8% 83.9%;
+}
+
+/* In your globals.css file */
+
+/* For WebKit browsers (Chrome, Safari, Edge, Opera) */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Height for horizontal scrollbar */
+  width: 8px; /* Width for vertical scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted)); /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary)); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-foreground)); /* Color of the scrollbar thumb on hover */
+}
+
+/* For Firefox (requires a different approach if you want full customization,
+   but for basic hiding or minimal styling, it might be different.) */
+/* Firefox currently has limited support for styling scrollbars directly via CSS.
+   You can hide it or change its color:
+   - scrollbar-width: none | auto | thin;
+   - scrollbar-color: <thumb-color> <track-color>;
+*/
+.custom-scrollbar {
+  scrollbar-width: thin; /* "auto" (default), "thin", or "none" */
+  scrollbar-color: hsl(var(--primary)) hsl(var(--muted)); /* thumb color track color */
 }
