@@ -1,8 +1,20 @@
-import React from "react"
+import React, { useState } from "react" // Import useState
 import { Monitor, Code } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function SkillsSection() {
+  // State to manage which tooltip is currently open (by its unique ID/alt text)
+  const [openTooltipId, setOpenTooltipId] = useState<string | null>(null);
+
+  // Function to handle the opening/closing of tooltips
+  const handleOpenChange = (id: string, open: boolean) => {
+    if (open) {
+      setOpenTooltipId(id); // Set the current open tooltip
+    } else if (openTooltipId === id) {
+      setOpenTooltipId(null); // Close it if it's the currently open one
+    }
+  };
+
   return (
     // Changed h-screen to min-h-screen to ensure content doesn't overflow on small devices
     <section id="skills" className="px-6 min-h-screen flex items-center bg-white py-12"> {/* Added py-12 for vertical padding on all screens */}
@@ -28,9 +40,16 @@ export default function SkillsSection() {
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
               <TooltipProvider>
                 {/* Python */}
-                <Tooltip delayDuration={0}>
+                <Tooltip
+                  delayDuration={0} // Makes tooltip appear instantly on hover/click
+                  open={openTooltipId === 'Python'} // Control open state based on `openTooltipId`
+                  onOpenChange={(open) => handleOpenChange('Python', open)} // Update state on open/close
+                >
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div
+                      className="flex flex-col items-center group cursor-pointer" // Added cursor-pointer
+                      onClick={() => handleOpenChange('Python', openTooltipId !== 'Python')} // Toggle on click
+                    >
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"> {/* Adjusted icon box size */}
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
@@ -46,9 +65,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* TensorFlow */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'TensorFlow'} onOpenChange={(open) => handleOpenChange('TensorFlow', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('TensorFlow', openTooltipId !== 'TensorFlow')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
@@ -64,9 +83,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* LangChain - Placeholder for src */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'LangChain'} onOpenChange={(open) => handleOpenChange('LangChain', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('LangChain', openTooltipId !== 'LangChain')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://placehold.co/40x40/ffffff/A78BFA?text=LC" // Placeholder for LangChain
@@ -82,9 +101,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Jupyter */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Jupyter'} onOpenChange={(open) => handleOpenChange('Jupyter', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Jupyter', openTooltipId !== 'Jupyter')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
@@ -100,9 +119,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Streamlit */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Streamlit'} onOpenChange={(open) => handleOpenChange('Streamlit', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Streamlit', openTooltipId !== 'Streamlit')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://streamlit.io/images/brand/streamlit-mark-color.svg"
@@ -118,9 +137,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Pandas */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Pandas'} onOpenChange={(open) => handleOpenChange('Pandas', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Pandas', openTooltipId !== 'Pandas')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
@@ -136,9 +155,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Scikit-learn */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Scikit-learn'} onOpenChange={(open) => handleOpenChange('Scikit-learn', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Scikit-learn', openTooltipId !== 'Scikit-learn')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
@@ -154,9 +173,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* NumPy */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'NumPy'} onOpenChange={(open) => handleOpenChange('NumPy', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('NumPy', openTooltipId !== 'NumPy')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
@@ -188,9 +207,9 @@ export default function SkillsSection() {
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
               <TooltipProvider>
                 {/* React */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'React'} onOpenChange={(open) => handleOpenChange('React', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('React', openTooltipId !== 'React')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
@@ -206,9 +225,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Next.js */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Next.js'} onOpenChange={(open) => handleOpenChange('Next.js', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Next.js', openTooltipId !== 'Next.js')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
@@ -224,9 +243,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Tailwind CSS */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Tailwind CSS'} onOpenChange={(open) => handleOpenChange('Tailwind CSS', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Tailwind CSS', openTooltipId !== 'Tailwind CSS')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
@@ -242,9 +261,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Node.js */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Node.js'} onOpenChange={(open) => handleOpenChange('Node.js', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Node.js', openTooltipId !== 'Node.js')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
@@ -260,9 +279,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Git */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Git'} onOpenChange={(open) => handleOpenChange('Git', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Git', openTooltipId !== 'Git')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
@@ -278,9 +297,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* Figma */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'Figma'} onOpenChange={(open) => handleOpenChange('Figma', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('Figma', openTooltipId !== 'Figma')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
@@ -296,9 +315,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* MongoDB */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'MongoDB'} onOpenChange={(open) => handleOpenChange('MongoDB', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('MongoDB', openTooltipId !== 'MongoDB')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
@@ -314,9 +333,9 @@ export default function SkillsSection() {
                 </Tooltip>
 
                 {/* TypeScript */}
-                <Tooltip delayDuration={0}>
+                <Tooltip delayDuration={0} open={openTooltipId === 'TypeScript'} onOpenChange={(open) => handleOpenChange('TypeScript', open)}>
                   <TooltipTrigger asChild>
-                    <div className="flex flex-col items-center group">
+                    <div className="flex flex-col items-center group cursor-pointer" onClick={() => handleOpenChange('TypeScript', openTooltipId !== 'TypeScript')}>
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <img
                           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
