@@ -193,7 +193,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
   return (
     <section
       id="portfolio"
-      className="px-6 h-screen flex flex-col bg-white relative dark:bg-background"
+      className="px-6 sm:h-screen flex flex-col bg-white relative dark:bg-background"
     >
       <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col">
         <div className="text-center mb-6 pt-8">
@@ -230,7 +230,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform flex-shrink-0 w-[300px] dark:bg-card dark:border dark:border-border cursor-pointer"
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform flex-shrink-0 w-[200px] sm:w-[300px] dark:bg-card dark:border dark:border-border cursor-pointer"
                 onClick={(e) => handleCardClick(project, e)} // Click handler for the whole card
               >
                 <div className="relative overflow-hidden">
@@ -253,11 +253,11 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300 dark:text-card-foreground dark:group-hover:text-primary">
+                  <h3 className="sm:text-lg text-sm font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300 dark:text-card-foreground dark:group-hover:text-primary">
                     {project.title}
                   </h3>
                   {/* Display the first part of the description on the card */}
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 dark:text-gray-400">
+                  <p className="text-gray-600 text-sm leading-relaxed sm:line-clamp-3 line-clamp-2 dark:text-gray-400">
                     {project.description.split("*")[0]}
                   </p>
                   <Button

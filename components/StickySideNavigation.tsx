@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { Home, Target, Settings, Briefcase, Mail } from "lucide-react"
+import { Home, Hammer, Calendar, Briefcase, Mail } from "lucide-react"
 
 const sections = [
   { id: "home", label: "Home", icon: Home },
-  { id: "skills", label: "Skills", icon: Target },
-  { id: "services", label: "Timeline", icon: Settings },
-  { id: "portfolio", label: "Portfolio", icon: Briefcase },
+  { id: "skills", label: "Skills", icon: Hammer },
+  { id: "services", label: "Timeline", icon: Calendar },
+  { id: "portfolio", label: "Projects", icon: Briefcase },
   { id: "contact", label: "Contact", icon: Mail },
 ]
 
