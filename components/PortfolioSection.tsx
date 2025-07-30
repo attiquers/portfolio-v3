@@ -1,9 +1,9 @@
 // src/components/PortfolioSection.tsx
-"use client"; // Required for Next.js App Router for client-side interactivity
+"use client";
 
 import React, { useRef, useState, useMemo } from "react";
-import { Button } from "@/components/ui/button"; // Adjust path as per your project setup
-import { Badge } from "@/components/ui/badge";   // Adjust path as per your project setup
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
 import {
   Dialog,
@@ -12,19 +12,17 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
-} from "@/components/ui/dialog"; // Adjust path as per your project setup
+} from "@/components/ui/dialog";
 
-// Define the Project interface
 interface Project {
   id: number;
   title: string;
-  category: "Web Development" | "Machine Learning"; // Strictly defined categories
+  category: "Generative AI" | "Web Development" | "Machine Learning" ;
   image: string;
   description: string;
   link: string;
 }
 
-// ProjectModal Component - Defined directly within this file
 const ProjectModal = ({
   isOpen,
   onClose,
@@ -36,7 +34,6 @@ const ProjectModal = ({
 }) => {
   if (!project) return null;
 
-  // Function to format description with new lines
   const formatDescription = (description: string) => {
     return description.split("*").map((line, index) => (
       <React.Fragment key={index}>
@@ -86,30 +83,24 @@ const ProjectModal = ({
   );
 };
 
-// Props for the PortfolioSection component
 interface PortfolioSectionProps {
   allProjects: Project[];
 }
 
-// PortfolioSection Component
 export default function PortfolioSection({ allProjects }: PortfolioSectionProps) {
-  // Define categories internally
-  const categories = ["All", "Web Development", "Machine Learning"] as const;
-  type CategoryType = (typeof categories)[number]; // Derived type for strong typing
+  const categories = ["All", "Generative AI","Web Development", "Machine Learning"] as const;
+  type CategoryType = (typeof categories)[number];
 
   const [selectedCategory, setSelectedCategory] = useState<CategoryType>("All");
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeftStart, setScrollLeftStart] = useState(0);
 
-  // State for the project modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Function to get emoji for the internally defined categories
   const getCategoryEmoji = (category: CategoryType) => {
     switch (category) {
       case "All":
@@ -118,12 +109,13 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
         return "💻";
       case "Machine Learning":
         return "🧠";
+      case "Generative AI":
+        return "✨";
       default:
-        return ""; // Should not happen with strict CategoryType
+        return "";
     }
   };
 
-  // Memoize filtered projects to prevent unnecessary recalculations
   const filteredProjects = useMemo(() => {
     if (selectedCategory === "All") {
       return allProjects;
@@ -131,18 +123,12 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
     return allProjects.filter((project) => project.category === selectedCategory);
   }, [allProjects, selectedCategory]);
 
-  const handleScrollRight = () => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300 + 16; // Card width + gap
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const handleScrollLeft = () => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300 + 16; // Card width + gap
-      scrollContainerRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
+  const handleScroll = (direction: "left" | "right") => {
+    const scrollAmount = 300 + 16;
+    scrollContainerRef.current?.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -160,7 +146,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
     const x = e.pageX - (scrollContainerRef.current?.offsetLeft || 0);
     const walk = (x - startX) * 1.5;
     if (scrollContainerRef.current) {
-      scrollContainerRef.scrollLeft = scrollLeftStart - walk;
+      scrollContainerRef.current.scrollLeft = scrollLeftStart - walk;
     }
   };
 
@@ -181,8 +167,6 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
   };
 
   const handleCardClick = (project: Project, e: React.MouseEvent<HTMLDivElement>) => {
-    // Only prevent modal if the click target is the "View Project" button specifically.
-    // The "See More" button will now trigger the parent card's click.
     if ((e.target as HTMLElement).closest("button")?.textContent?.includes("View Project")) {
       return;
     }
@@ -191,10 +175,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
   };
 
   return (
-    <section
-      id="portfolio"
-      className="px-6 sm:h-screen flex flex-col bg-white relative dark:bg-background"
-    >
+    <section id="portfolio" className="px-6 sm:h-screen flex flex-col bg-white dark:bg-background">
       <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col">
         <div className="text-center mb-6 pt-8">
           <h2 className="text-3xl font-bold text-purple-700 mb-4 dark:text-foreground">
@@ -217,7 +198,6 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
           </div>
         </div>
 
-        {/* Horizontal scrollable container for projects */}
         <div className="flex-1 overflow-hidden relative">
           <div
             ref={scrollContainerRef}
@@ -231,7 +211,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
               <div
                 key={project.id}
                 className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform flex-shrink-0 w-[200px] sm:w-[300px] dark:bg-card dark:border dark:border-border cursor-pointer"
-                onClick={(e) => handleCardClick(project, e)} // Click handler for the whole card
+                onClick={(e) => handleCardClick(project, e)}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -243,7 +223,7 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
                     <Button
                       className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 bg-white text-gray-900 hover:bg-gray-100 dark:bg-primary-foreground dark:text-background dark:hover:bg-primary-foreground/90"
                       onClick={(e) => {
-                        e.stopPropagation(); // KEEP this to prevent opening modal AND navigating when View Project is clicked
+                        e.stopPropagation();
                         window.open(project.link, "_blank");
                       }}
                     >
@@ -256,15 +236,13 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
                   <h3 className="sm:text-lg text-sm font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300 dark:text-card-foreground dark:group-hover:text-primary">
                     {project.title}
                   </h3>
-                  {/* Display the first part of the description on the card */}
                   <p className="text-gray-600 text-sm leading-relaxed sm:line-clamp-3 line-clamp-2 dark:text-gray-400">
                     {project.description.split("*")[0]}
                   </p>
                   <Button
                     variant="link"
                     className="p-0 h-auto text-purple-600 hover:text-purple-700 dark:text-primary dark:hover:text-primary/90"
-                    // REMOVED e.stopPropagation() here
-                    onClick={(e) => handleCardClick(project, e)} // Now this will correctly trigger the modal via the card's click
+                    onClick={(e) => handleCardClick(project, e)}
                   >
                     See More
                   </Button>
@@ -273,35 +251,28 @@ export default function PortfolioSection({ allProjects }: PortfolioSectionProps)
             ))}
           </div>
 
-          {/* Left Arrow */}
           {filteredProjects.length > 3 && (
-            <div className="absolute left-0 top-36 transform z-20">
-              <div className="group cursor-pointer" onClick={handleScrollLeft}>
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 dark:bg-primary dark:hover:bg-primary/90">
-                  <ChevronLeft className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute left-14 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap dark:bg-sidebar dark:text-sidebar-foreground">
-                  Previous Projects
+            <>
+              <div className="absolute left-0 top-36 transform z-20">
+                <div className="group cursor-pointer" onClick={() => handleScroll("left")}>
+                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 dark:bg-primary dark:hover:bg-primary/90">
+                    <ChevronLeft className="w-6 h-6 text-white" />
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
 
-          {/* Right Arrow */}
-          {filteredProjects.length > 3 && (
-            <div className="absolute right-0 transform top-36 z-20">
-              <div className="group cursor-pointer" onClick={handleScrollRight}>
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 dark:bg-primary dark:hover:bg-primary/90">
-                  <ChevronRight className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute right-14 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap dark:bg-sidebar dark:text-sidebar-foreground">
-                  More Projects
+              <div className="absolute right-0 top-36 transform z-20">
+                <div className="group cursor-pointer" onClick={() => handleScroll("right")}>
+                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 dark:bg-primary dark:hover:bg-primary/90">
+                    <ChevronRight className="w-6 h-6 text-white" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </div>
+
       <ProjectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

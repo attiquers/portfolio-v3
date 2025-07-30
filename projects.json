@@ -1,52 +1,90 @@
-{
-  "projects": [
-    {
-      "id": 1,
-      "title": "PokeClub: Gamified Pokémon-themed app",
-      "category": "Web Development",
-      "image": "/projects/pokedex.png",
-      "description": "Gamified Pokémon-themed app built in Next.js, Tailwind CSS, Supabase & Deepseek API. *Learned: OpenRouter API integration, Prompt Engineering, Supabase authentication, SQL Database Relationships, and gamification mechanics. *Features: AI powered pokemon battle, sign-up-in, quiz-based rewards, Pokémon sale and capture.",
-      "link": "https://pokedex-bluseel.vercel.app/"
-    },
-    {
-      "id": 2,
-      "title": "Rouse Restaurant: Food ordering platform",
-      "category": "Web Development",
-      "image": "/projects/rouse.png",
-      "description": "Food ordering platform using the MERN stack. *Learned: Real-time order management, and admin-user flows. Agile workflow learned *Features: Ordering, Tracking Order, Admin Dashboard for handling orders and updating menu",
-      "link": "https://rouse-restuarant.vercel.app/"
-    },
-    {
-      "id": 3,
-      "title": "Task Manager Pro",
-      "category": "Web Development",
-      "image": "/projects/task.png",
-      "description": "Academic productivity tool built with React and MongoDB. *Learned: state management, user feedback loop, and dashboard design. *Features: CR adds/removes courses and tasks. Other students can see them *Try with: Section FA22-BCS-D | Password: baseer",
-      "link": "https://tasktracker0.netlify.app/"
-    },
-    {
-      "id": 4,
-      "title": "E-Voting Website: Secure voting system",
-      "category": "Web Development",
-      "image": "/projects/evs.png",
-      "description": "Secure voting system with phase-based flow using the MERN stack. *Learned: Role-based access, OTP authentication, and conditional UI based on election status. *Features: Voter/Candidate/Party registration phase, Voters voting phase, Results phase *Try with: User Dashboard at /, Admin Dashboard at /admin.",
-      "link": "https://evs-electronicvotingsystem.vercel.app"
-    },
-    {
-      "id": 5,
-      "title": "Stroke Prediction - ML model",
-      "category": "Machine Learning",
-      "image": "/projects/stroke.png",
-      "description": "ML model predicting stroke risk using Python and scikit-learn. *Learned: data preprocessing, binary classification, and medical dataset evaluation. *Features: Predicts stroke risk percetange based on user inputs.",
-      "link": "https://huggingface.co/spaces/attiquers/stroke-risk-predictor"
-    },
-    {
-      "id": 6,
-      "title": "Real Estate Site",
-      "category": "Web Development",
-      "image": "/projects/saul.png",
-      "description": "Responsive frontend using React and Tailwind CSS, deployed on Vercel. *Learned: Reactjs, Responsive UI design, Vercel Deployement, and performance tuning. *Features: Responsive.",
-      "link": "https://sauljohnson.vercel.app/"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "Voice-Chatbot",
+    "category": "Generative AI",
+    "image": "/projects/voicechatbot.png",
+    "description": "Built a full-stack AI voice assistant using FastAPI and React with real-time WebSocket streaming. Users speak into the mic, and the bot replies with AI-generated speech sentence-by-sentence. Learned: FastAPI, WebSockets, Whisper STT, Kokoro TTS, LLM APIs (OpenRouter/Ollama). Features: Real-time voice interaction, streaming transcription and TTS, sentence-wise playback, modular LLM backend support.",
+    "link": "https://github.com/attiquers/voice-chatbot"
+  },
+  {
+    "id": 2,
+    "title": "RAG-Chatbot",
+    "category": "Generative AI",
+    "image": "/projects/ragchatbot.png",
+    "description": "Created a RAG pipeline where users input multiple website URLs; LLM answers queries using only retrieved web context. Learned: LangChain, FAISS, Vector Embeddings. Features: Live Demo, Retrieval Augmented Generation, Chat History, Web Content Memory.",
+    "link": "https://github.com/attiquers/rag-chatbot"
+  },
+  {
+    "id": 3,
+    "title": "Ollama-UI",
+    "category": "Generative AI",
+    "image": "/projects/ollama-ui.png",
+    "description": "Lightweight web interface for Ollama models, inspired by OpenWeb UI, built with MERN. Learned: Ollama, Ollama API, Docker. Features: File uploads, LLM selection, multi-chat handling, Gemini/ChatGPT-like UI, Dockerized app.",
+    "link": "https://github.com/attiquers/ollama-ui"
+  },
+  {
+    "id": 4,
+    "title": "AI-Powered Google Form",
+    "category": "Generative AI",
+    "image": "/projects/ai-form.png",
+    "description": "Built an interactive Google Form integrated with Gemini API to provide LLM-based response. Learned: Google Forms, Google Apps Script, Gemini API Integration. Features: Live Demo, Form questions sent to LLM; responses emailed back to users.",
+    "link": "https://github.com/attiquers/ai-form"
+  },
+  {
+    "id": 5,
+    "title": "Stroke Prediction",
+    "category": "Machine Learning",
+    "image": "/projects/stroke-prediction.png",
+    "description": "Built an ML model using Python & Scikit-learn to predict stroke risk. Learned: Data preprocessing, Binary Classification, Medical Dataset Evaluation.",
+    "link": "https://github.com/attiquers/stroke-prediction"
+  },
+  {
+    "id": 6,
+    "title": "Handwritten Text Generation",
+    "category": "Machine Learning",
+    "image": "/projects/handwritten.png",
+    "description": "Trained a handwritten digit generator from scratch using MNIST. Learned: PyTorch, Streamlit, MNIST dataset.",
+    "link": "https://github.com/attiquers/handwritten-text-generator"
+  },
+  {
+    "id": 7,
+    "title": "Rouse Restaurant",
+    "category": "Web Development",
+    "image": "/projects/rouse.png",
+    "description": "Food ordering platform built with MERN stack. Learned: Admin-user flow and Agile development. Features: Ordering, Tracking Order, Admin Dashboard for handling orders and updating menu.",
+    "link": "https://github.com/attiquers/rouse-restaurant"
+  },
+  {
+    "id": 8,
+    "title": "Task Tracker",
+    "category": "Web Development",
+    "image": "/projects/tasktracker.png",
+    "description": "Academic productivity app for sharing and tracking coursework. Learned: State management and Dashboard design. Features: CR adds/removes courses and tasks. Other students can see them. Try with: Section FA22-BCS-D | Password: baser.",
+    "link": "https://github.com/attiquers/task-tracker"
+  },
+  {
+    "id": 9,
+    "title": "PokeClub",
+    "category": "Web Development",
+    "image": "/projects/pokeclub.png",
+    "description": "Gamified Pokémon app using Next.js, Supabase, and LLMs. Learned: OpenRouter API, Prompt Engineering, Auth, SQL DB Relationships. Features: AI Pokémon Battles, Sign-up/Login, Wild Pokémon Capture.",
+    "link": "https://github.com/attiquers/pokeclub"
+  },
+  {
+    "id": 10,
+    "title": "E-Voting Website",
+    "category": "Web Development",
+    "image": "/projects/evoting.png",
+    "description": "Secure voting system with phase-based flow using the MERN stack. Learned: Role-based access, OTP authentication, and conditional UI based on election status. Features: Voter/Candidate/Party registration phase, Voters voting phase, Results phase. Try with: User Dashboard, Admin Dashboard.",
+    "link": "https://github.com/attiquers/e-voting"
+  },
+  {
+    "id": 11,
+    "title": "Real Estate Site",
+    "category": "Web Development",
+    "image": "/projects/realestate.png",
+    "description": "Responsive real estate frontend built with React & TailwindCSS, deployed on Vercel. Learned: Deployment workflows, Performance tuning, responsive UI design. Tools Learned: ReactJs, Tailwind CSS, Vercel.",
+    "link": "https://github.com/attiquers/real-estate"
+  }
+]

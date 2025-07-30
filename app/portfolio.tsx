@@ -60,7 +60,7 @@ export default function Portfolio() {
 
       {/* The portfolio projects section, displaying projects based on categories.
           It receives the full projects data and manages its own filtering and display logic internally. */}
-      <PortfolioSection allProjects={projectsData.projects} />
+      <PortfolioSection allProjects={projectsData} />
 
       {/* The contact section, allowing visitors to get in touch */}
       <ContactSection />
