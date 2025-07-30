@@ -5,7 +5,7 @@
     "category": "Generative AI",
     "image": "/projects/voicechatbot.png",
     "description": "Built a full-stack AI voice assistant using FastAPI and React with real-time WebSocket streaming. Users speak into the mic, and the bot replies with AI-generated speech sentence-by-sentence. *Learned: FastAPI, WebSockets, Whisper STT, Kokoro TTS, LLM APIs (OpenRouter/Ollama). *Features: Real-time voice interaction, streaming transcription and TTS, sentence-wise playback, modular LLM backend support.",
-    "link": "https://github.com/attiquers/voice-chatbot"
+    "link": "https://github.com/attiquers/fullStack-voiceAgent"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Generative AI",
     "image": "/projects/ragchatbot.png",
     "description": "Created a RAG pipeline where users input multiple website URLs; LLM answers queries using only retrieved web context. *Learned: LangChain, FAISS, Vector Embeddings. *Features: Live Demo, Retrieval Augmented Generation, Chat History, Web Content Memory.",
-    "link": "https://github.com/attiquers/rag-chatbot"
+    "link": "https://rag-vectordb-j5dhjhcn4vxfhdnbnnwjn7.streamlit.app/"
   },
   {
     "id": 3,
@@ -29,7 +29,7 @@
     "category": "Generative AI",
     "image": "/projects/ai-form.png",
     "description": "Built an interactive Google Form integrated with Gemini API to provide LLM-based response. *Learned: Google Forms, Google Apps Script, Gemini API Integration. *Features: Live Demo, Form questions sent to LLM; responses emailed back to users.",
-    "link": "https://github.com/attiquers/ai-form"
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLScKE6oWT-pM2x01MCIAOWKhvE-9QLfvY5qNy99b5uzdV6FLgQ/viewform"
   },
   {
     "id": 5,
@@ -45,7 +45,7 @@
     "category": "Machine Learning",
     "image": "/projects/handwritten.png",
     "description": "Trained a handwritten digit generator from scratch using MNIST. *Learned: PyTorch, Streamlit, MNIST dataset.",
-    "link": "https://github.com/attiquers/handwritten-text-generator"
+    "link": "https://meti-problem3-f9u2vyymyuvxrhn2yvyqnh.streamlit.app/"
   },
   {
     "id": 7,

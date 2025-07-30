@@ -55,13 +55,14 @@ const ProjectModal = ({
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="relative h-48 w-full overflow-hidden rounded-md">
+          <div className="relative w-full max-h-[400px] overflow-auto rounded-md bg-muted flex items-center justify-center">
             <img
               src={project.image || "/placeholder.svg"}
               alt={project.title}
-              className="h-full w-full object-cover"
+              className="object-contain max-h-[400px] w-full"
             />
           </div>
+
           <div className="text-gray-700 dark:text-gray-300">
             <p className="text-sm leading-relaxed">
               {formatDescription(project.description)}
