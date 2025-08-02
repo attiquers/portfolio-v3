@@ -1,90 +1,110 @@
 [
   {
     "id": 1,
+    "title": "AI Subtitle Generator",
+    "category": "Generative AI",
+    "image": "/projects/ai-subtitles.png",
+    "description": "Streamlit application that generates stylized subtitles for a video using the Faster-Whisper model. You can customize the appearance of the subtitles and get a live preview before rendering the final video. *Learned: Faster-Whisper, Streamlit, customizable subtitle styles, active word highlighting. *Features: Customizable styles, active word highlighting, live preview, model selection, SRT editing.",
+    "link": "https://attiquers-ai-subtitles.streamlit.app/",
+    "github": "https://github.com/attiquers/videoSubtitleGenerator"
+  },
+  {
+    "id": 2,
     "title": "Voice-Chatbot",
     "category": "Generative AI",
     "image": "/projects/voicechatbot.png",
     "description": "Built a full-stack AI voice assistant using FastAPI and React with real-time WebSocket streaming. Users speak into the mic, and the bot replies with AI-generated speech sentence-by-sentence. *Learned: FastAPI, WebSockets, Whisper STT, Kokoro TTS, LLM APIs (OpenRouter/Ollama). *Features: Real-time voice interaction, streaming transcription and TTS, sentence-wise playback, modular LLM backend support.",
-    "link": "https://github.com/attiquers/fullStack-voiceAgent"
+    "link": "https://github.com/attiquers/fullStack-voiceAgent",
+    "github": "https://github.com/attiquers/fullStack-voiceAgent"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "RAG-Chatbot",
     "category": "Generative AI",
     "image": "/projects/ragchatbot.png",
     "description": "Created a RAG pipeline where users input multiple website URLs; LLM answers queries using only retrieved web context. *Learned: LangChain, FAISS, Vector Embeddings. *Features: Live Demo, Retrieval Augmented Generation, Chat History, Web Content Memory.",
-    "link": "https://rag-vectordb-j5dhjhcn4vxfhdnbnnwjn7.streamlit.app/"
+    "link": "https://rag-vectordb-j5dhjhcn4vxfhdnbnnwjn7.streamlit.app/",
+    "github": "https://github.com/attiquers/websearch-chatbot"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Ollama-UI",
     "category": "Generative AI",
     "image": "/projects/ollama-ui.png",
     "description": "Lightweight web interface for Ollama models, inspired by OpenWeb UI, built with MERN. *Learned: Ollama, Ollama API, Docker. *Features: File uploads, LLM selection, multi-chat handling, Gemini/ChatGPT-like UI, Dockerized app.",
-    "link": "https://github.com/attiquers/ollama-ui"
+    "link": "https://github.com/attiquers/ollama-ui",
+    "github": "https://github.com/attiquers/ollama-ui"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "AI-Powered Google Form",
     "category": "Generative AI",
     "image": "/projects/ai-form.png",
     "description": "Built an interactive Google Form integrated with Gemini API to provide LLM-based response. *Learned: Google Forms, Google Apps Script, Gemini API Integration. *Features: Live Demo, Form questions sent to LLM; responses emailed back to users.",
-    "link": "https://docs.google.com/forms/d/e/1FAIpQLScKE6oWT-pM2x01MCIAOWKhvE-9QLfvY5qNy99b5uzdV6FLgQ/viewform"
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLScKE6oWT-pM2x01MCIAOWKhvE-9QLfvY5qNy99b5uzdV6FLgQ/viewform",
+    "github": "https://github.com/attiquers/Google-Forms-AI-Integration"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Stroke Prediction - ML model",
     "category": "Machine Learning",
     "image": "/projects/stroke.png",
     "description": "ML model predicting stroke risk using Python and scikit-learn. *Learned: data preprocessing, binary classification, and medical dataset evaluation. *Features: Predicts stroke risk percetange based on user inputs.",
-    "link": "https://huggingface.co/spaces/attiquers/stroke-risk-predictor"
+    "link": "https://huggingface.co/spaces/attiquers/stroke-risk-predictor",
+    "github": "https://github.com/attiquers/stroke-risk-predictor"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Handwritten Text Generation",
     "category": "Machine Learning",
     "image": "/projects/handwritten.png",
     "description": "Trained a handwritten digit generator from scratch using MNIST. *Learned: PyTorch, Streamlit, MNIST dataset.",
-    "link": "https://meti-problem3-f9u2vyymyuvxrhn2yvyqnh.streamlit.app/"
+    "link": "https://meti-problem3-f9u2vyymyuvxrhn2yvyqnh.streamlit.app/",
+    "github": "https://github.com/attiquers/Handwritten-Digit-Image-Generator"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Rouse Restaurant: Food ordering platform",
     "category": "Web Development",
     "image": "/projects/rouse.png",
     "description": "Food ordering platform using the MERN stack. *Learned: Real-time order management, and admin-user flows. Agile workflow learned *Features: Ordering, Tracking Order, Admin Dashboard for handling orders and updating menu",
-    "link": "https://rouse-restuarant.vercel.app/"
+    "link": "https://rouse-restuarant.vercel.app/",
+    "github": "https://github.com/attiquers/rouse-restuarant"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Task Manager Pro",
     "category": "Web Development",
     "image": "/projects/task.png",
     "description": "Academic productivity tool built with React and MongoDB. *Learned: state management, user feedback loop, and dashboard design. *Features: CR adds/removes courses and tasks. Other students can see them *Try with: Section FA22-BCS-D | Password: baseer",
-    "link": "https://tasktracker0.netlify.app/"
+    "link": "https://tasktracker0.netlify.app/",
+    "github": "https://github.com/attiquers/tasklogger"
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "PokeClub: Gamified Pokémon-themed app",
     "category": "Web Development",
     "image": "/projects/pokedex.png",
     "description": "Gamified Pokémon-themed app built in Next.js, Tailwind CSS, Supabase & Deepseek API. *Learned: OpenRouter API integration, Prompt Engineering, Supabase authentication, SQL Database Relationships, and gamification mechanics. *Features: AI powered pokemon battle, sign-up-in, quiz-based rewards, Pokémon sale and capture.",
-    "link": "https://pokedex-bluseel.vercel.app/"
+    "link": "https://pokedex-bluseel.vercel.app/",
+    "github": "https://github.com/attiquers/pokedex"
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "E-Voting Website: Secure voting system",
     "category": "Web Development",
     "image": "/projects/evs.png",
     "description": "Secure voting system with phase-based flow using the MERN stack. *Learned: Role-based access, OTP authentication, and conditional UI based on election status. *Features: Voter/Candidate/Party registration phase, Voters voting phase, Results phase *Try with: User Dashboard at /, Admin Dashboard at /admin.",
-    "link": "https://evs-electronicvotingsystem.vercel.app"
+    "link": "https://evs-electronicvotingsystem.vercel.app",
+    "github": "https://github.com/attiquers/voting-system"
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "Real Estate Site",
     "category": "Web Development",
     "image": "/projects/saul.png",
     "description": "Responsive frontend using React and Tailwind CSS, deployed on Vercel. *Learned: Reactjs, Responsive UI design, Vercel Deployement, and performance tuning. *Features: Responsive.",
-    "link": "https://sauljohnson.vercel.app/"
+    "link": "https://sauljohnson.vercel.app/",
+    "github": "https://github.com/attiquers/hansteam"
   }
 ]

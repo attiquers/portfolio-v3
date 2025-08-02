@@ -4,7 +4,7 @@
 import React, { useRef, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
+import { ExternalLink, Github, ChevronRight, ChevronLeft } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -21,6 +21,7 @@ interface Project {
   image: string;
   description: string;
   link: string;
+  github?: string;
 }
 
 const ProjectModal = ({
@@ -68,7 +69,16 @@ const ProjectModal = ({
               {formatDescription(project.description)}
             </p>
           </div>
-          <div className="flex justify-end pt-4">
+          <div className="flex justify-end pt-4 space-x-2">
+            {project.github && (
+              <Button
+                onClick={() => window.open(project.github, "_blank")}
+                className="bg-gray-800 text-white hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600"
+              >
+                <Github className="w-4 h-4 mr-2" />
+                See Code
+              </Button>
+            )}
             <Button
               onClick={() => window.open(project.link, "_blank")}
               className="bg-purple-600 text-white hover:bg-purple-700 dark:bg-primary dark:hover:bg-primary/90"
